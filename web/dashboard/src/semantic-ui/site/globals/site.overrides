@@ -1,0 +1,48 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.selection.dropdown>.search.icon,
+.ui.selection.dropdown>.delete.icon,
+.ui.selection.dropdown>.dropdown.icon {
+    padding: 0 !important;
+}
+
+.field.field-success>.ui.input>input[type] {
+    background: #fcfffb;
+    border-color: #92d980;
+}
+
+.field.field-success>.selection.dropdown {
+    background: #fcfffb;
+    border-color: #92d980;
+}
+
+.field-error {
+    background: #FFF6F6 !important;
+    border-color: #E0B4B4 !important;
+    color: #9F3A38 !important;
+}
+
+.field-success {
+    background: #fcfffb !important;
+    border-color: #92d980 !important;
+}
+
+.ui.form .field.disabled>label,
+.ui.form .fields.disabled>label {
+    opacity: 0.70 !important;
+}
+
+.ui.disabled.input,
+.ui.input:not(.disabled) input[disabled] {
+    opacity: 0.70 !important;
+}
+
+.ui.steps .step.active {
+    background-color: aliceblue !important;
+}
+
+.ui.steps .step.active::after {
+    background-color: aliceblue !important;
+}

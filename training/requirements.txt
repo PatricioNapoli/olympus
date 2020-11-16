@@ -1,0 +1,11 @@
+requests
+
+matplotlib
+pandas
+sklearn
+numpy
+keras
+tensorflow
+joblib
+
+rethinkdb

@@ -1,0 +1,22 @@
+.editor-area {
+    max-height: 400px;
+    overflow: auto;
+    margin: 1.67em 0;
+    padding-left: 3em;
+    tab-size: 2ch;
+}
+
+.editor {
+    font-size: 12px;
+    font-variant-ligatures: common-ligatures;
+    border-radius: 3px;
+}
+
+.editor>pre,
+textarea {
+    padding: 0 !important;
+}
+
+.editor>textarea {
+    max-height: unset !important;
+}

@@ -1,0 +1,22 @@
+version: "3.5"
+
+services:
+  gatherer:
+    build: gatherer
+    env_file:
+      - .env
+    environment:
+      DB_HOST: db
+    restart: unless-stopped
+
+  db:
+    image: rethinkdb:2.4.1-buster-slim
+    volumes:
+      - db_data:/data
+    restart: unless-stopped
+    ports:
+      - "5000:8080"
+      - "28015:28015"
+
+volumes:
+  db_data:

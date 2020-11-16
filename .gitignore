@@ -1,0 +1,5 @@
+venv/
+src/data/*.csv
+src/*.pdf
+.idea/
+.env

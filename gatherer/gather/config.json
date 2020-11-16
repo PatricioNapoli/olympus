@@ -1,0 +1,21 @@
+{
+  "epoch_default": 1577836800,
+  "step_default": 3600,
+
+  "currencies": [
+    {
+      "id": 1,
+      "coin": "BTC"
+    }
+  ],
+  "currency_conversion": "USD",
+  "api_histo_hour_limit": 2000,
+
+  "api_histo_hour_url": "https://min-api.cryptocompare.com/data/histohour",
+  "api_histo_hour_social_url": "https://min-api.cryptocompare.com/data/social/coin/histo/hour",
+
+  "api_histo_day_url": "https://min-api.cryptocompare.com/data/histoday",
+  "api_histo_day_social_url": "https://min-api.cryptocompare.com/data/social/coin/histo/day",
+
+  "api_histo_day_block_url": "https://min-api.cryptocompare.com/data/blockchain/histo/day"
+}

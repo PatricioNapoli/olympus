@@ -1,0 +1,41 @@
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto.ttf);
+  }
+  
+  @font-face {
+    font-family: RobotoMono;
+    src: url(fonts/RobotoMono.ttf);
+  }
+  
+  body {
+    font-family: Roboto, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: Roboto, sans-serif !important;
+  }
+  
+  pre {
+    border-radius: 5px;
+    margin-top: 0 !important;
+  }
+  
+  .ui.label:first-child {
+    margin-left: 0.14em;
+  }
+  
+  .statistic .value .icon {
+    margin-right: 10px !important;
+  }
+  
+  .card {
+    border-top: 2px solid #EC386B !important;
+  }
+  
+  .card .card {
+    border-top: 2px solid teal !important;
+  }
+  

@@ -1,0 +1,10 @@
+requests
+
+matplotlib
+pandas
+sklearn
+statsmodels
+numpy
+seaborn
+
+rethinkdb

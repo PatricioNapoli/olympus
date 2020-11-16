@@ -1,0 +1,116 @@
+.rt-table,
+.rt-tbody {
+    overflow: visible !important;
+}
+
+.ReactTable {
+    border-radius: 10px;
+    border: 1px solid rgba(34,36,38,.15);
+    border-top: 2px solid #EC386B;
+    border-bottom: unset;
+}
+
+.ReactTable .rt-thead.-filters input,
+.ReactTable .rt-thead.-filters select {
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    margin: 0em;
+    outline: none;
+    -webkit-appearance: none;
+    tap-highlight-color: rgba(255, 255, 255, 0);
+    line-height: 0.8em;
+    padding: 0.67857143em 1em;
+    font-size: 1em;
+    background: #FFFFFF;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    color: rgba(0, 0, 0, 0.7);
+    border-radius: 0.5em;
+    box-shadow: 0em 0em 0em 0em transparent inset;
+    transition: color 0.1s ease, border-color 0.1s ease;
+}
+
+.ReactTable .rt-thead.-filters input:hover,
+.ReactTable .rt-thead.-filters select:hover {
+    color: rgba(0, 0, 0, 0.95);
+    border-color: #85B7D9;
+    border-radius: 0.5em;
+    background: #FFFFFF;
+    box-shadow: 0px 0em 0em 0em rgba(34, 36, 38, 0.35) inset;
+}
+
+.ReactTable .rt-thead.-header {
+    box-shadow: unset;
+    padding: 0px;
+    padding-top: 5px;
+    padding-left: 5px;
+    background: #fff;
+    color: black;
+}
+
+.ReactTable .rt-thead.-filters {
+    background: #fff;
+}
+
+.ReactTable .rt-thead .rt-th, .ReactTable .rt-thead .rt-td {
+    padding: 5px !important;
+}
+
+.ReactTable .rt-thead.-headerGroups {
+    background: unset;
+    border-bottom: unset;
+}
+
+.rt-thead.-headerGroups {
+    display: none;
+}
+
+.ReactTable .rt-thead .rt-th, .ReactTable .rt-thead .rt-td {
+    padding: 10px;
+    border: none;
+}
+
+.ReactTable .rt-tbody .rt-tr-group {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.ReactTable .rt-thead.-filters .rt-th {
+    border-right: unset;
+}
+.ReactTable .rt-tbody .rt-td {
+    border-right: unset;
+    padding: 10px;
+    padding-left: 8px;
+    margin: auto;
+}
+
+.ReactTable .-pagination .-btn {
+    background: #f9fafb;
+    color: black;
+}
+.ReactTable .-pagination {
+    box-shadow: unset;
+    border-top: unset;
+}
+
+.ReactTable .-pagination .-previous > button:hover {
+    background: rgba(0,0,0,0.03) !important;;
+    color: black;
+}
+
+.ReactTable .-pagination .-next > button:hover {
+    background: rgba(0,0,0,0.03) !important;;
+    color: black;
+}
+
+.rt-thead {
+    border-radius: 10px;
+    background: #f9fafb !important;
+    padding: 5px;
+}
+
+.pagination-bottom {
+    border-radius: 10px;
+    background: #f9fafb !important;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding: 5px;
+}
+

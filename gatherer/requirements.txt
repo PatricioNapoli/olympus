@@ -1,0 +1,4 @@
+requests
+rethinkdb
+pandas
+sklearn
