@@ -15,7 +15,8 @@ function getDefaultState(section) {
 const stateAwareComponents = [
   'site',
   'home',
-  'profile'
+  'profile',
+  'history'
 ]
 
 function getInitialState() {

@@ -92,6 +92,19 @@ func GetPortfolio(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params, services *
 	utils.JSON(ctx, p)
 }
 
+func GetTrades(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params, services *services.Services) {
+	c, err := r.Table("trades").Filter(map[string]interface{}{"user_id": 1}).Run(services.DB)
+	if handleErr(ctx, err) {
+		return
+	}
+	defer c.Close()
+
+	var trades []bot.Trade
+	c.All(&trades)
+
+	utils.JSON(ctx, trades)
+}
+
 func CreateBot(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params, services *services.Services) {
 	var b bot.Config
 	utils.FromJSON(ctx.Request.Body(), &b)

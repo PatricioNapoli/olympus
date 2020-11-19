@@ -26,6 +26,7 @@ type Trade struct {
 	ID     		string  `json:"id,omitempty"`
 	BinanceID   string  `json:"binance_id"`
 	BotID       string  `json:"bot_id"`
+	UserID      int     `json:"user_id"`
 	Time        int64  	`json:"time"`
 	Amount 		float32 `json:"amount"`
 	Action 		string  `json:"signal"`
@@ -94,6 +95,15 @@ func Update(config *Config, key string, secret string, services *services.Servic
 		quantity = float32(math.Min(float64(totalPortfolioBtc * config.PortfolioRatio), float64(p["btc"].FreeFloat)))
 	}
 
+	_, err = r.Table("trades").Insert(Trade{
+		BinanceID: "",
+		BotID:     config.ID,
+		UserID:    1,
+		Time:      utils.Millis(),
+		Amount:    quantity,
+		Action:    side,
+	}).Run(services.DB)
+
 	if quantity < 0.00063 {
 		return []byte("quantity does not meet minimum BTC order"), errors.New("quantity does not meet minimum BTC order")
 	}
@@ -103,18 +113,18 @@ func Update(config *Config, key string, secret string, services *services.Servic
 	hmac := security.NewHMAC(params, secret)
 
 	resp = services.NewRequest("POST",
-		"https://api.binance.com/api/v3/order",
+		"https://api.binance.com/api/v3/order/test",
 		map[string]string{"X-MBX-APIKEY": key},
 		fmt.Sprintf("%s&signature=%s", params, hmac))
 
 	if resp != nil {
-		r.Table("trades").Insert(Trade{
-			BinanceID: "",
-			BotID:     config.ID,
-			Time:      utils.Millis(),
-			Amount:    quantity,
-			Action:    side,
-		})
+		//r.Table("trades").Insert(Trade{
+		//	BinanceID: "",
+		//	BotID:     config.ID,
+		//	Time:      utils.Millis(),
+		//	Amount:    quantity,
+		//	Action:    side,
+		//})
 	}
 
 	return nil, errors.New("binance error: " + string(resp))

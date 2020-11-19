@@ -1,4 +1,5 @@
 import Home from "./views/Home"
+import History from "./views/History"
 import Profile from "./views/Profile";
 
 class Route {
@@ -14,6 +15,7 @@ class Route {
 
 export const routes = [
     new Route("/trading", "/trading", "Trading", "home", true, Home),
+    new Route("/history", "/history", "History", "history", true, History),
     new Route("/profile", "/profile", "Profile", "user", true, Profile),
 ];
 

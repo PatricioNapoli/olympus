@@ -59,6 +59,7 @@ func (s *Server) Start() {
 	r.GET("/api/bot/all", s.chain(GetBots))
 
 	r.GET("/api/user/portfolio", s.chain(GetPortfolio))
+	r.GET("/api/user/trades", s.chain(GetTrades))
 	r.GET("/api/user", s.chain(GetUser))
 	r.OPTIONS("/api/user", s.chain(Empty))
 
