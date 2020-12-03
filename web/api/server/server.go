@@ -46,6 +46,7 @@ func (s *Server) Start() {
 
 	r.GET("/", s.chain(GetIndex))
 	r.GET("/static/*filepath", s.chain(GetStatic))
+	r.GET("/landing", s.chain(GetLanding))
 
 	r.GET("/api/model/day/stats", s.chain(GetModelDataDay))
 	r.GET("/api/model/hour/stats", s.chain(GetModelDataHour))

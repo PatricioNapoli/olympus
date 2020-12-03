@@ -174,15 +174,19 @@ func UpdateUser(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params, services *se
 }
 
 func GetIndexNotFound(ctx *fasthttp.RequestCtx, services *services.Services) {
-	utils.StaticFileWithCache(ctx, services, "/index.html")
+	utils.StaticFile(ctx, services, "/index.html", true)
 }
 
 func GetIndex(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params, services *services.Services) {
-	utils.StaticFileWithCache(ctx, services, "/login.html")
+	utils.StaticFile(ctx, services, "/login.html", true)
+}
+
+func GetLanding(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params, services *services.Services) {
+	utils.StaticFile(ctx, services, "/landing.html", false)
 }
 
 func GetStatic(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params, services *services.Services) {
-	utils.StaticFileWithCache(ctx, services, "")
+	utils.StaticFile(ctx, services, "", true)
 }
 
 func PurgeStaticCache(ctx *fasthttp.RequestCtx, ps fasthttprouter.Params, services *services.Services) {

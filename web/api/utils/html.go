@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func StaticFileWithCache(ctx *fasthttp.RequestCtx, services *services.Services, prefix string) {
+func StaticFile(ctx *fasthttp.RequestCtx, services *services.Services, prefix string, cache bool) {
 	pref := string(ctx.Request.URI().Path())
 
 	if prefix != "" {
@@ -24,13 +24,17 @@ func StaticFileWithCache(ctx *fasthttp.RequestCtx, services *services.Services, 
 
 	ctx.Response.Header.Set("Content-Type", m)
 
-	if val, exists := services.Cache[path]; exists {
-		ctx.Write(val)
-		return
+	if cache {
+		if val, exists := services.Cache[path]; exists {
+			ctx.Write(val)
+			return
+		}
 	}
 
 	f := ReadFile(path)
-	services.WriteCache(path, f)
+	if cache {
+		services.WriteCache(path, f)
+	}
 	ctx.Write(f)
 }
 

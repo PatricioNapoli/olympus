@@ -1,33 +1,3 @@
-function rand(min,max)
-{
-    return Math.floor(Math.random()*(max-min+1)+min);
-}
-
-function makeColor(min, max) {
-    return "rgba(" + rand(min, max) + "," + rand(min, max) + "," + rand(min, max) + ",1)";
-}
-
-function getColors() {
-    return {
-        color1: makeColor(65, 85),
-        color2: makeColor(45, 65),
-        color3: makeColor(20, 45),
-        color4: makeColor(10, 20),
-        color5: makeColor(0, 10)
-    };
-}
-
-function getGradient() {
-    let colors = getColors();
-    return "linear-gradient(0deg, " + colors.color1 + " 0%, " + colors.color2 + " 25%, " + colors.color3 + " 50%, " + colors.color4 + " 75%, " + colors.color5 + " 100%)";
-}
-
-document.getElementById("home").style.background = getGradient();
-
-let elements = document.getElementsByClassName("cta-dark");
-for (let item of elements)
-    item.style.background = getGradient();
-
 particlesJS("particles", {
     "particles": {
         "number": {
@@ -133,3 +103,29 @@ particlesJS("particles", {
     },
     "retina_detect": false
 });
+
+function rand(min,max)
+{
+    return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+function makeColor(min, max) {
+    return "rgba(" + rand(min, max) + "," + rand(min, max) + "," + rand(min, max) + ",1)";
+}
+
+function getColors() {
+    return {
+        color1: makeColor(65, 85),
+        color2: makeColor(45, 65),
+        color3: makeColor(20, 45),
+        color4: makeColor(10, 20),
+        color5: makeColor(0, 10)
+    };
+}
+
+function getGradient() {
+    let colors = getColors();
+    return "linear-gradient(0deg, " + colors.color1 + " 0%, " + colors.color2 + " 25%, " + colors.color3 + " 50%, " + colors.color4 + " 75%, " + colors.color5 + " 100%)";
+}
+
+document.getElementsByTagName("body")[0].style.background =  getGradient();
